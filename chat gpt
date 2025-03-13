@@ -1,0 +1,22 @@
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
+
+chatbot = ChatBot("Filou bot")
+
+trainer = ChatterBotCorpusTrainer(allo)
+trainer.train("chatterbot.corpus.french")
+
+
+def chat():
+    print("Bonjour ! Tape 'quit' pour arrêter la conversation.")
+    while True:
+        user_input = input("Vous: ")
+        if user_input.lower() == "quit":
+            print("Au revoir !")
+            break
+        response = chatbot.get_response(user_input)
+        print("Bot:", response)
+
+# Lancer le chat
+if __name__ == "__main__":
+    chat()
